@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Figpack information and planning session</title>
+  <link rel="stylesheet" href="vendor/highlight-11.9.0/github.min.css" media="(prefers-color-scheme: light)">
+  <link rel="stylesheet" href="vendor/highlight-11.9.0/github-dark.min.css" media="(prefers-color-scheme: dark)">
+  <script src="vendor/highlight-11.9.0/highlight.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="pager">
+    <button id="nav-prev" aria-label="Previous slide"></button>
+    <button id="nav-pos" class="nav-toc" aria-haspopup="true" aria-expanded="false" title="Slides (T)"></button>
+    <div id="toc" class="toc" hidden>
+      <ol id="toc-list"></ol>
+    </div>
+    <button id="nav-next" aria-label="Next slide"></button>
+  </nav>
+  <main>
+    <div id="deck">
+      <section id="title" data-hint="Title" class="page active">
+        <h1>Figpack information and planning session</h1>
+        <p class="author">Jeremy Magland</p>
+        <p class="affiliation">Center for Computational Mathematics, Flatiron Institute</p>
+        <p class="date">5 November 2026</p>
+        <p class="crafted"><a id="crafted-link" target="_blank" rel="noopener" hidden>&#9998; Crafted by a human</a></p>
+      </section>
+
+      <section id="why" data-hint="Why" class="page split">
+        <h2>Why Figpack?</h2>
+        <div class="text">
+          <p>Static figures do not carry nearly as much information as interactive web applications backed by large datasets.</p>
+          <p class="idea"><strong>Idea:</strong> The web application is the figure.</p>
+        </div>
+        <div class="demo">
+          <figure>
+            <img id="why-static" class="static-figure" alt="Static plot of four channels of a recording">
+            <figcaption>A static figure</figcaption>
+          </figure>
+          <figure>
+            <div class="app-frame">
+              <div class="app-controls">
+                <button id="why-pan-left" aria-label="Pan left">&#9664;</button>
+                <button id="why-pan-right" aria-label="Pan right">&#9654;</button>
+                <button id="why-zoom-in" aria-label="Zoom in">+</button>
+                <button id="why-zoom-out" aria-label="Zoom out">&minus;</button>
+                <span id="why-readout" class="readout"></span>
+              </div>
+              <canvas id="why-traces"></canvas>
+              <canvas id="why-timeline"></canvas>
+            </div>
+            <figcaption>An interactive web application (click, drag, scroll, or use the toolbar)</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <!-- The figure is the one uploaded by app/example_figure.py. -->
+      <section id="example" data-hint="Example" class="page split code-split">
+        <h2>Figpack figure example</h2>
+        <div class="text">
+          <p class="lead">Create from Python (or MATLAB)</p>
+          <pre class="code"><code id="example-code" class="language-python"></code></pre>
+        </div>
+        <div class="demo">
+          <iframe id="example-figure" class="figure-frame" src="https://figures.figpack.org/figures/default/595aafbd9ac7a0b3e580d1ad/index.html" loading="lazy" title="Figpack figure example"></iframe>
+          <p class="figure-url"><a id="example-url" href="https://figures.figpack.org/figures/default/595aafbd9ac7a0b3e580d1ad/index.html" target="_blank" rel="noopener">https://figures.figpack.org/figures/default/595aafbd9ac7a0b3e580d1ad/index.html</a></p>
+        </div>
+      </section>
+
+      <!-- Uploaded by app/svg_export_figure.py, with a viewer that includes the
+           spectrogram SVG export fix (figpack branch spectrogram-svg-export). -->
+      <section id="svg" data-hint="SVG" class="page split remix-split">
+        <h2>Exporting as SVG</h2>
+        <div class="text compact">
+          <p><strong>Export as SVG</strong> button</p>
+          <ul class="points">
+            <li>Export the figure as SVG (vector graphics) for inclusion in publication or presentation</li>
+            <li>UI controls and other features are not shown</li>
+            <li>Layout is redrawn based on user-selected dimensions for the output</li>
+            <li>Not all views support it (ask Jeremy to expand support)</li>
+          </ul>
+        </div>
+        <div class="demo">
+          <iframe id="svg-figure" class="remix-frame" src="https://figures.figpack.org/figures/default/ae74faf264a65df621744e2a/index.html" loading="lazy" title="Figure with views that support SVG export"></iframe>
+          <p class="figure-url"><a id="svg-url" href="https://figures.figpack.org/figures/default/ae74faf264a65df621744e2a/index.html" target="_blank" rel="noopener">Open in a new tab</a></p>
+        </div>
+      </section>
+
+      <!-- File list and sizes from the example figure's manifest.json. -->
+      <section id="directory" data-hint="Directory" class="page split">
+        <h2>A figure is a self-contained directory</h2>
+        <div class="text">
+          <p>A core principle of Figpack is that figures are always self-contained directories.</p>
+          <ul class="points">
+            <li>Portable</li>
+            <li>Shareable</li>
+            <li>Long-term archivable</li>
+            <li>No external dependencies</li>
+          </ul>
+        </div>
+        <div class="demo">
+          <div class="tree">
+            <span class="dir">595aafbd9ac7a0b3e580d1ad/</span><span></span><span></span>
+            <span>├── <span class="key">index.html</span></span><span class="size">3.6 KB</span><span class="role">entry point</span>
+            <span class="dir">├── assets/</span><span></span><span></span>
+            <span>│   ├── <span class="key">index-WMFzRCdR.js</span></span><span class="size">2.3 MB</span><span class="role">JavaScript</span>
+            <span>│   ├── index-oS-16pKZ.css</span><span class="size">6.2 KB</span><span></span>
+            <span>│   └── neurosift-logo-CLsuwLMO.png</span><span class="size">9.3 KB</span><span></span>
+            <span class="dir">├── data.zarr/</span><span></span><span></span>
+            <span>│   ├── .zmetadata</span><span class="size">4.0 KB</span><span></span>
+            <span>│   └── <span class="key">_consolidated_0.dat</span></span><span class="size">14.1 MB</span><span class="role">data</span>
+            <span>└── extension_manifest.json</span><span class="size">22 B</span><span></span>
+          </div>
+          <p class="tree-total">7 files, 16.4 MB</p>
+        </div>
+      </section>
+
+      <section id="zarr" data-hint="Zarr" class="page split">
+        <h2>Efficient data layout - consolidated Zarr</h2>
+        <div class="text dense">
+          <p>Although not a strict requirement, figure data is generally laid out using a variant of the cloud-friendly Zarr format.</p>
+          <ul class="points">
+            <li>N-dimensional arrays stored in chunks</li>
+            <li>Chunks are compressed</li>
+            <li>Supports lazy loading</li>
+            <li>Multi-scale storage (zoom out without loading entire dataset)</li>
+            <li>Consolidated chunks so total number of files is small (unique to Figpack)</li>
+          </ul>
+        </div>
+        <div class="demo">
+          <div id="zarr-diagram" class="zdiagram"></div>
+        </div>
+      </section>
+
+      <section id="lifetime" data-hint="Lifetime" class="page split wide-left">
+        <h2>Where does the figure live, and for how long?</h2>
+        <div class="text compact">
+          <p>By default figures expire in 24 hours. Rarely deleted though. The purpose is so there is no expectation that the figure will be available long term (different from figurl).</p>
+          <p><strong>Unless the figure is renewed or pinned.</strong></p>
+          <p class="list-head">Multi-tier:</p>
+          <ul class="points">
+            <li>Ephemeral (no API key required) - cannot be renewed</li>
+            <li>Default - expires in 24 hours</li>
+            <li>Renewed - expires in an additional 7 days</li>
+            <li>Pinned - does not expire, but won't be around forever</li>
+            <li>Pinned in your own bucket - will survive as long as you maintain the bucket</li>
+            <li>Hosted on GitHub Pages</li>
+            <li>Archived on a service like Zenodo (long term - can accompany publication)</li>
+          </ul>
+        </div>
+        <div class="demo">
+          <div id="lifetime-diagram" class="ldiagram"></div>
+        </div>
+      </section>
+
+      <!-- The manage page for the example figure from the "Example" slide. -->
+      <section id="manage" data-hint="Manage" class="page full">
+        <h2>Managing a figure</h2>
+        <iframe class="manage-frame" src="https://manage.figpack.org/figure?figure_url=https%3A%2F%2Ffigures.figpack.org%2Ffigures%2Fdefault%2F595aafbd9ac7a0b3e580d1ad%2Findex.html" loading="lazy" title="Figpack figure management page"></iframe>
+        <p class="figure-url"><a href="https://manage.figpack.org/figure?figure_url=https%3A%2F%2Ffigures.figpack.org%2Ffigures%2Fdefault%2F595aafbd9ac7a0b3e580d1ad%2Findex.html" target="_blank" rel="noopener">Open in a new tab</a></p>
+      </section>
+
+      <section id="gallery" data-hint="Gallery" class="page split gallery-split">
+        <h2>Figpack Gallery</h2>
+        <div class="text gallery-side">
+          <ul id="gallery-list" class="gallery-list"></ul>
+          <p class="gallery-more">The full gallery is in the <a href="https://flatironinstitute.github.io/figpack/" target="_blank" rel="noopener">Figpack documentation</a></p>
+        </div>
+        <div class="demo">
+          <iframe id="gallery-frame" class="gallery-frame" loading="lazy" title="Figpack gallery figure"></iframe>
+          <p class="figure-url"><a id="gallery-url" target="_blank" rel="noopener"></a></p>
+        </div>
+      </section>
+
+      <!-- Logos from each project's own repository. -->
+      <section id="integrations" data-hint="Integrations" class="page full">
+        <h2>Integrations</h2>
+        <div class="integrations">
+          <div class="integration">
+            <img src="assets/spikeinterface-logo.png" alt="SpikeInterface logo">
+            <p class="name">SpikeInterface</p>
+            <p class="status">integrated</p>
+            <p class="detail">figpack_spike_sorting</p>
+          </div>
+          <div class="integration">
+            <img src="assets/datajoint-logo.png" alt="DataJoint logo">
+            <p class="name">DataJoint</p>
+            <p class="status">integrated</p>
+            <p class="detail">dj-figpack-codecs</p>
+          </div>
+          <div class="integration future">
+            <img src="assets/spyglass-logo.svg" alt="Spyglass logo">
+            <p class="name">Spyglass</p>
+            <p class="status">future</p>
+            <p class="detail">right now it uses figurl</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="custom" data-hint="Custom" class="page split">
+        <h2>What if the view I need isn't available?</h2>
+        <div class="text dense">
+          <p>If you can imagine it, it's probably possible!</p>
+          <p>With coding agents... implementation is usually straightforward.</p>
+          <p class="list-head">Your options:</p>
+          <ul class="points">
+            <li>Request the feature/view on the <a href="https://github.com/flatironinstitute/figpack/issues" target="_blank" rel="noopener">figpack GitHub repo</a>.</li>
+            <li>Ask Jeremy directly via email/Slack</li>
+            <li>Implement it yourself. (Point a coding agent to the codebase)</li>
+          </ul>
+        </div>
+        <div class="demo">
+          <svg class="odiagram" viewBox="0 0 960 700" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <marker id="opt-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="20" markerHeight="20" orient="auto-start-reverse">
+                <path d="M 0 0 L 10 5 L 0 10 Z" class="arrowhead"/>
+              </marker>
+            </defs>
+            <rect class="node" x="260" y="20" width="440" height="96" rx="14"/>
+            <text class="node-title" x="480" y="78" text-anchor="middle">The view you need</text>
+
+            <path class="edge" d="M 400 116 C 400 180, 160 180, 160 254" marker-end="url(#opt-arrow)"/>
+            <path class="edge" d="M 480 116 L 480 254" marker-end="url(#opt-arrow)"/>
+            <path class="edge" d="M 560 116 C 560 180, 800 180, 800 254" marker-end="url(#opt-arrow)"/>
+
+            <rect class="option opt1" x="20" y="260" width="280" height="150" rx="14"/>
+            <text class="opt-title" x="160" y="324" text-anchor="middle">Request it</text>
+            <text class="opt-sub" x="160" y="364" text-anchor="middle">GitHub issue</text>
+
+            <rect class="option opt2" x="340" y="260" width="280" height="150" rx="14"/>
+            <text class="opt-title" x="480" y="324" text-anchor="middle">Ask Jeremy</text>
+            <text class="opt-sub" x="480" y="364" text-anchor="middle">email / Slack</text>
+
+            <rect class="option opt3" x="660" y="260" width="280" height="150" rx="14"/>
+            <text class="opt-title" x="800" y="324" text-anchor="middle">Implement it</text>
+            <text class="opt-sub" x="800" y="364" text-anchor="middle">you + a coding agent</text>
+
+            <path class="edge" d="M 160 410 C 160 490, 400 490, 400 554" marker-end="url(#opt-arrow)"/>
+            <path class="edge" d="M 480 410 L 480 554" marker-end="url(#opt-arrow)"/>
+            <path class="edge" d="M 800 410 C 800 490, 560 490, 560 554" marker-end="url(#opt-arrow)"/>
+
+            <rect class="node done" x="260" y="560" width="440" height="96" rx="14"/>
+            <text class="node-title" x="480" y="618" text-anchor="middle">New view</text>
+          </svg>
+        </div>
+      </section>
+
+      <!-- The remix page for the example figure from the "Example" slide. -->
+      <section id="remix" data-hint="Remix" class="page split remix-split">
+        <h2>New experimental feature - REMIX</h2>
+        <div class="text compact">
+          <p>Suppose you created a large figure, and you want to adjust colors, layout, labels, etc, or even add new views of the underlying data.</p>
+          <p>Select the "REMIX" button on the figure management page.</p>
+          <p>Chat with AI to make your one-off changes, specific to that figure.</p>
+          <p>Nice for preparing a one-off figure for a publication or presentation.</p>
+        </div>
+        <div class="demo">
+          <iframe class="remix-frame" src="https://manage.figpack.org/remix?figure=https%3A%2F%2Ffigures.figpack.org%2Ffigures%2Fdefault%2F595aafbd9ac7a0b3e580d1ad%2Findex.html" loading="lazy" title="Figpack remix page"></iframe>
+          <p class="figure-url"><a href="https://manage.figpack.org/remix?figure=https%3A%2F%2Ffigures.figpack.org%2Ffigures%2Fdefault%2F595aafbd9ac7a0b3e580d1ad%2Findex.html" target="_blank" rel="noopener">Open in a new tab</a></p>
+        </div>
+      </section>
+
+      <section id="remix-flow" data-hint="Flow" class="page full">
+        <h2>Remix flow</h2>
+        <svg class="odiagram flow" viewBox="0 0 1724 760" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <marker id="flow-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="20" markerHeight="20" orient="auto-start-reverse">
+              <path d="M 0 0 L 10 5 L 0 10 Z" class="arrowhead"/>
+            </marker>
+          </defs>
+
+          <!-- Figure -> (optional copy) -> remix -->
+          <rect class="node" x="0" y="320" width="300" height="140" rx="14"/>
+          <text class="node-title" x="150" y="402" text-anchor="middle">Figure</text>
+
+          <path class="edge" d="M 300 390 L 394 390" marker-end="url(#flow-arrow)"/>
+          <rect class="node dashed" x="400" y="320" width="340" height="140" rx="14"/>
+          <text class="opt-title" x="570" y="378" text-anchor="middle">Create a copy</text>
+          <text class="opt-sub" x="570" y="414" text-anchor="middle">optional; required if</text>
+          <text class="opt-sub" x="570" y="442" text-anchor="middle">someone else owns it</text>
+
+          <path class="edge" d="M 740 390 L 834 390" marker-end="url(#flow-arrow)"/>
+          <path class="edge dashed" d="M 150 320 C 150 170, 1010 170, 1010 314" marker-end="url(#flow-arrow)"/>
+          <text class="opt-sub" x="570" y="186" text-anchor="middle">your own figure</text>
+
+          <rect class="node done" x="840" y="320" width="340" height="140" rx="14"/>
+          <text class="opt-title" x="1010" y="380" text-anchor="middle">Remix</text>
+          <text class="opt-sub" x="1010" y="418" text-anchor="middle">using AI chat</text>
+
+          <!-- Three ways to finish -->
+          <path class="edge" d="M 1180 390 C 1230 390, 1230 150, 1284 150" marker-end="url(#flow-arrow)"/>
+          <path class="edge" d="M 1180 390 L 1284 390" marker-end="url(#flow-arrow)"/>
+          <path class="edge" d="M 1180 390 C 1230 390, 1230 630, 1284 630" marker-end="url(#flow-arrow)"/>
+
+          <rect class="option opt1" x="1290" y="80" width="380" height="140" rx="14"/>
+          <text class="opt-title" x="1480" y="140" text-anchor="middle">Save remix</text>
+          <text class="opt-sub" x="1480" y="178" text-anchor="middle">modifies the figure</text>
+
+          <rect class="option opt2" x="1290" y="320" width="380" height="140" rx="14"/>
+          <text class="opt-title" x="1480" y="380" text-anchor="middle">Export patch</text>
+          <text class="opt-sub" x="1480" y="418" text-anchor="middle">apply when making future figures</text>
+
+          <rect class="option opt3" x="1290" y="560" width="380" height="140" rx="14"/>
+          <text class="opt-title" x="1480" y="620" text-anchor="middle">Apply patch</text>
+          <text class="opt-sub" x="1480" y="658" text-anchor="middle">from a previously exported patch</text>
+
+          <!-- An exported patch can be applied later -->
+          <path class="edge dashed" d="M 1670 390 C 1730 390, 1730 630, 1676 630" marker-end="url(#flow-arrow)"/>
+        </svg>
+      </section>
+
+      <!-- Uploaded by app/annotation_figure.py, built from the figpack branch
+           timeseries-graph-annotations. -->
+      <section id="annotations" data-hint="Annotations" class="page full">
+        <h2>New experimental feature - annotations</h2>
+        <iframe class="manage-frame" src="https://figures.figpack.org/figures/default/d9e569da8d4930b0d2889089/index.html" loading="lazy" title="Figpack annotation example"></iframe>
+        <p class="figure-url"><code>vv.TimeseriesGraph(..., allow_annotation=True)</code> &middot; <a href="https://figures.figpack.org/figures/default/d9e569da8d4930b0d2889089/index.html" target="_blank" rel="noopener">Open in a new tab</a></p>
+      </section>
+
+      <section id="future" data-hint="Future" class="page full">
+        <h2>Possible future directions</h2>
+        <div class="directions">
+          <div class="direction">
+            <svg class="dir-icon" viewBox="0 0 48 48" aria-hidden="true"><rect x="6" y="6" width="15" height="15" rx="2"/><rect x="27" y="6" width="15" height="15" rx="2"/><rect x="6" y="27" width="15" height="15" rx="2"/><path d="M34.5 27v15M27 34.5h15"/></svg>
+            <div>
+              <p class="dir-title">Adding new view types</p>
+              <p class="dir-sub">need input from users</p>
+            </div>
+          </div>
+          <div class="direction">
+            <svg class="dir-icon" viewBox="0 0 48 48" aria-hidden="true"><path d="M32 7l9 9-23 23H9v-9z"/><path d="M27 12l9 9"/><path d="M8 43h32"/></svg>
+            <div>
+              <p class="dir-title">Building more advanced annotation/curation capabilities</p>
+              <p class="dir-sub">building into workflow</p>
+            </div>
+          </div>
+          <div class="direction">
+            <svg class="dir-icon" viewBox="0 0 48 48" aria-hidden="true"><rect x="5" y="8" width="38" height="10" rx="2"/><path d="M8 18v20a2 2 0 0 0 2 2h28a2 2 0 0 0 2-2V18"/><path d="M19 26h10"/></svg>
+            <div>
+              <p class="dir-title">Make it easier to archive figures</p>
+              <p class="dir-sub">host on GitHub Pages or Zenodo</p>
+            </div>
+          </div>
+          <div class="direction open">
+            <svg class="dir-icon" viewBox="0 0 48 48" aria-hidden="true"><path d="M8 10h32a3 3 0 0 1 3 3v18a3 3 0 0 1-3 3H22l-9 8v-8H8a3 3 0 0 1-3-3V13a3 3 0 0 1 3-3z"/><path d="M20 18a4 4 0 1 1 5.5 3.7c-1 .5-1.5 1.2-1.5 2.3v1"/><path d="M24 29.5v.5"/></svg>
+            <div>
+              <p class="dir-title">What else? ...</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+  <script src="crafted-link.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
