@@ -190,7 +190,7 @@ Right panel:
 
 Show an example remix interface - use a figure made for this slide (app/remix_figure.py).
 
-https://figures.figpack.org/figures/default/e68c3cc33c5dbefcd3baa9f3/index.html
+https://figures.figpack.org/figures/default/ab472dabb9ccca2888208f40/index.html
 
 ## Remix flow
 
