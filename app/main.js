@@ -715,37 +715,26 @@ fetch('example_figure.py')
 })();
 
 // ---------------------------------------------------------------------------
-// Gallery: example figures built and hosted with the figpack documentation.
-// Names are the headings they appear under in the docs.
+// Gallery: figures made for this presentation (app/gallery/README.md lists
+// them with the scripts that generated them).
 
 (function makeGallery() {
-  const docs = 'https://flatironinstitute.github.io/figpack';
+  const figpack = 'https://figures.figpack.org/figures/default';
   const figures = [
-    ['spike_sorting_tutorial_dashboard', 'Spike sorting: combined layout', 'Spike sorting'],
-    ['spike_sorting_tutorial_sorting_curation', 'Sorting curation', 'Spike sorting'],
-    ['spike_sorting_tutorial_raster_plot', 'Raster plot', 'Spike sorting'],
-    ['spike_sorting_tutorial_average_waveforms', 'Average waveforms', 'Spike sorting'],
-    ['spike_sorting_tutorial_unit_locations', 'Unit locations', 'Spike sorting'],
-    ['nwb_tutorial_plane_segmentation', 'Plane segmentation', 'NWB'],
-    ['nwb_tutorial_pose_estimation', 'Pose estimation', 'NWB'],
-    ['tutorial_multichannel_timeseries', 'Multichannel timeseries', 'Basic views'],
-    ['tutorial_spectrogram_example', 'Spectrogram', 'Basic views'],
-    ['tutorial_complex_layout', 'Complex nested layout', 'Basic views'],
-    ['tutorial_plotly_example', 'Plotly integration', 'Basic views'],
-    ['tutorial_dataframe_example', 'DataFrame view', 'Basic views'],
-    ['tutorial_3d_scene_example', '3D scene', 'Other views'],
-    ['tutorial_force_graph_example', 'Force graph', 'Other views'],
-    ['tutorial_sphere_embedding_example', 'Sphere embedding', 'Other views'],
-    ['tutorial_fmri_bold_example', 'fMRI BOLD', 'Other views'],
-    ['tutorial_track_animation_example', 'Track animation', 'Other views'],
-    ['tutorial_linear_decode_example', 'Linear decode', 'Other views'],
+    ['050e838b96ea38559529ba6e', 'Neuropixels sorted units', 'Real data, Allen Institute'],
+    ['076afa1ec78284f277442936', 'Two-photon calcium imaging', 'Real data, Allen Institute'],
+    ['a2d808e9ed7571ca8e672aa8', 'Surface evolution through a cylinder', 'Simulated'],
+    ['eed1cf231f2e78d856e71264', 'Spiral wave breakup', 'Simulated'],
+    ['34e197d667054776f9018d47', 'Place cells, phase precession and replay', 'Simulated'],
+    ['4c37069f4e6a1753c1147dcc', 'Tidal tails in a galaxy encounter', 'Simulated'],
+    ['6a8dac15a57fa2c3a0ed073b', 'Gamma oscillations in an E/I network', 'Simulated'],
   ];
   const list = document.getElementById('gallery-list');
   const frame = document.getElementById('gallery-frame');
   const link = document.getElementById('gallery-url');
 
   function select(i) {
-    const url = `${docs}/${figures[i][0]}/index.html`;
+    const url = `${figpack}/${figures[i][0]}/index.html`;
     frame.src = `${url}?embedded=1`;
     link.href = url;
     link.textContent = url;

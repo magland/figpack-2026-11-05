@@ -123,13 +123,13 @@ https://figures.figpack.org/figures/default/595aafbd9ac7a0b3e580d1ad/index.html
 
 Left panel:
 
-A selection of figures from the documentation, scrollable, each one has a name
+A selection of figures made for this presentation (listed in app/gallery/README.md), scrollable, each one has a name
 
 Somehow indicate that the full gallery is found on the documentation page, with a link.
 
 Right panel:
 
-Depending on which was selected on the left, an iframe pointing to the figure hosted in the docs
+Depending on which was selected on the left, an iframe pointing to the selected figure
 
 ## Integrations
 
@@ -190,11 +190,11 @@ Or export patch (to apply at figure curation time to future figures)
 
 Or apply patch (from previous exported patch)
 
-## New experimental feature - annotations
+## New Feature - Annotations
 
-Iframe pointing to the pinned example figure with annotation enabled (TimeseriesGraph with allow_annotation=True, from the timeseries-graph-annotations branch of figpack). Annotate time intervals and export them as CSV.
+Iframe pointing to the pinned example figure with annotation enabled (TimeseriesGraph with allow_annotation=True). Annotate time intervals and export them as CSV.
 
-https://figures.figpack.org/figures/default/d9e569da8d4930b0d2889089/index.html
+https://figures.figpack.org/figures/default/1e88f4bfde208fd89f4e2d1f/index.html
 
 ## Possible future directions
 

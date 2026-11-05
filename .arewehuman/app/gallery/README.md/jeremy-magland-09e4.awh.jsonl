@@ -1,0 +1,12 @@
+{"format":"arewehuman","version":2,"id":"a6ad4e5b-f622-4f5f-8af2-cd6383467183","app":{"name":"arewehuman","version":"0.1.0","url":"https://github.com/magland/arewehuman"},"created":"2026-11-05T13:18:08.291Z","t0":1793884688291}
+["s",0]
+["g",0,"1c1b09e35ae7d898a83a346cac29b8642af90764"]
+["i",0,0,537,"x",[17,18,120,121,147,167,384,536]]
+["i",83,537,180,"o",[179]]
+{"checkpoint":"22858d33797ddbc471d962a7d07520775b65e3961bc99a405e6b37fcca5e6906"}
+["s",1768327]
+["i",1771676,717,196,"o",[195]]
+{"checkpoint":"d2594c2fc379488761544454da8b3690c3168ed204ae6a04beafeebc42823a8e"}
+["i",2008721,913,574,"o",[193,378,573]]
+{"checkpoint":"7d5ea640c0155effbe16e011ea8f704e0c43c11b1926b0bc58554263339d360c"}
+{"title":"README","text":"# Gallery figures\n\nFigures built for the Figpack Gallery slide, with the script that generated each one where available.\n\n| Figure | URL | Script |\n| --- | --- | --- |\n| Allen Neuropixels: sorted units across cortex, hippocampus and thalamus | https://figures.figpack.org/figures/default/050e838b96ea38559529ba6e/index.html | [allen_neuropixels_units.py](allen_neuropixels_units.py) |\n| Surface evolution through a cylinder (Owen Melia) | https://figures.figpack.org/figures/default/a2d808e9ed7571ca8e672aa8/index.html | not available |\n| Spiral wave breakup in an excitable medium | https://figures.figpack.org/figures/default/eed1cf231f2e78d856e71264/index.html | [spiral_wave_breakup.py](spiral_wave_breakup.py) |\n| Allen two-photon imaging: 475 neurons in visual cortex | https://figures.figpack.org/figures/default/076afa1ec78284f277442936/index.html | [allen_calcium_imaging.py](allen_calcium_imaging.py) |\n| Place cells, phase precession and replay (simulated) | https://figures.figpack.org/figures/default/34e197d667054776f9018d47/index.html | [sim_place_cell_replay.py](sim_place_cell_replay.py) |\n| Tidal tails in a galaxy encounter (simulated) | https://figures.figpack.org/figures/default/4c37069f4e6a1753c1147dcc/index.html | [sim_galaxy_encounter.py](sim_galaxy_encounter.py) |\n| Gamma oscillations in a spiking E/I network (simulated) | https://figures.figpack.org/figures/default/6a8dac15a57fa2c3a0ed073b/index.html | [sim_ei_network_gamma.py](sim_ei_network_gamma.py) |\n","textSha256":"38e9b92519d449d4f5e228616b3553781cb5e762f17f7b04ed7538fa85e1913e","seal":"21ef16073cc82772afa5797a37dbb02f954439474156d72d45a010bec06f9e17"}
