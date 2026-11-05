@@ -783,6 +783,51 @@ function currentIndex() {
 navPrev.addEventListener('click', () => goToIndex(currentIndex() - 1));
 navNext.addEventListener('click', () => goToIndex(currentIndex() + 1));
 
+// Swipe left or right on a touch screen to change slides. Touches inside an
+// embedded figure stay in the figure (the iframe receives them), and a swipe
+// is ignored when it starts on something that handles its own dragging or
+// scrolls sideways, or while the page is pinch-zoomed.
+let swipe = null;
+
+function scrollsSideways(el) {
+  for (; el && el !== document.body; el = el.parentElement) {
+    const ox = getComputedStyle(el).overflowX;
+    if ((ox === 'auto' || ox === 'scroll') && el.scrollWidth > el.clientWidth) return true;
+  }
+  return false;
+}
+
+document.addEventListener('touchstart', (e) => {
+  const zoomed = window.visualViewport && window.visualViewport.scale > 1.01;
+  if (e.touches.length !== 1 || zoomed || !toc.hidden ||
+      e.target.closest('input, select, textarea, canvas, [style*="touch-action"], #why-traces') ||
+      scrollsSideways(e.target)) {
+    swipe = null;
+    return;
+  }
+  const touch = e.touches[0];
+  swipe = { x: touch.clientX, y: touch.clientY, time: Date.now() };
+}, { passive: true });
+
+document.addEventListener('touchmove', (e) => {
+  if (swipe && e.touches.length !== 1) swipe = null;
+}, { passive: true });
+
+document.addEventListener('touchend', (e) => {
+  if (!swipe) return;
+  const touch = e.changedTouches[0];
+  const dx = touch.clientX - swipe.x;
+  const dy = touch.clientY - swipe.y;
+  const fast = Date.now() - swipe.time < 800;
+  swipe = null;
+  // Mostly horizontal, and long enough not to be a tap or a scroll
+  if (fast && Math.abs(dx) > 50 && Math.abs(dx) > 1.5 * Math.abs(dy)) {
+    goToIndex(currentIndex() + (dx < 0 ? 1 : -1));
+  }
+}, { passive: true });
+
+document.addEventListener('touchcancel', () => { swipe = null; }, { passive: true });
+
 document.addEventListener('keydown', (e) => {
   if (e.altKey || e.ctrlKey || e.metaKey) return;
   if (e.target.closest?.('input, select, textarea')) return;
