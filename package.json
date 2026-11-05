@@ -2,7 +2,7 @@
   "name": "figpack-2026-11-05",
   "private": true,
   "scripts": {
-    "dev": "npm run crafted-link && python3 -m http.server 8000 --directory app",
+    "dev": "npm run crafted-link && python3 -m http.server 8000 --bind 127.0.0.1 --directory app",
     "crafted-link": "node scripts/crafted-link.mjs"
   }
 }

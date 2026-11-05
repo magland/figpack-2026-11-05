@@ -47,6 +47,22 @@ Below the iframe, show the URL linking to the figure in a new tab.
 
 https://figures.figpack.org/figures/default/595aafbd9ac7a0b3e580d1ad/index.html
 
+## Synchronized views
+
+Left panel:
+
+Views in a figure share state:
+* Current time and visible time range (time series, spectrograms, videos)
+* Selected units (spike sorting views)
+
+Indicate where the data come from (Allen Brain Observatory, DANDI:000728).
+
+Right panel:
+
+Pinned figure: Allen two-photon session with the visual stimulus video, the imaging movie, dF/F traces and running speed, all synchronized.
+
+https://figures.figpack.org/figures/default/13e864a656937f972da6cd05/index.html
+
 ## Exporting as SVG
 
 Left pane:

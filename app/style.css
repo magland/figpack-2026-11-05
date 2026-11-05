@@ -149,6 +149,7 @@ figcaption { font-size: 26px; opacity: 0.7; margin-top: 10px; text-align: center
 .text.compact p { margin: 0 0 22px; }
 .text.compact p.list-head { margin-bottom: 6px; }
 .text.compact ul.points li { margin-bottom: 4px; }
+.text.compact p.data-source { margin-top: 48px; font-size: 22px; line-height: 1.4; opacity: 0.7; }
 
 /* A title and one element filling the rest of the slide. */
 .page.full.active {
